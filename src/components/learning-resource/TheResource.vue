@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       selectedTab: 'stored-resources',
-      storedResources:  JSON.parse(localStorage.getItem('storedData')) || [],
+      storedResources: JSON.parse(localStorage.getItem('storedData')) || [],
     };
   },
   methods: {
@@ -49,6 +49,17 @@ export default {
       this.storedResources.splice(idx, 1);
       this.saveData();
     },
+    editResource(id, newTitle, newDesc, newLink) {
+      const idx = this.storedResources.findIndex((res) => res.id === id);
+      const updatedResource = {
+        title: newTitle,
+        description: newDesc,
+        link: newLink,
+      };
+      this.storedResources[idx] = updatedResource;
+      this.saveData();
+      console.log('Done');
+    },
   },
   computed: {
     storedResButton() {
@@ -72,8 +83,9 @@ export default {
       resources: this.storedResources,
       addResource: this.addResource,
       deleteResource: this.removeResource,
+      editResource: this.editResource
     };
-  }
+  },
 };
 </script>
 
