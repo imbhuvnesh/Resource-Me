@@ -21,6 +21,7 @@
       <base-btn @click="handleEdit">Save</base-btn>
     </div>
   </base-dialog>
+
   <li>
     <base-card>
       <header>
@@ -68,6 +69,8 @@ export default {
 li {
   margin: auto;
   max-width: 40rem;
+    transition:ease-out 4s;
+
 }
 
 header {
@@ -82,6 +85,8 @@ h3 {
 }
 
 p {
+  text-align: justify;
+  padding: 1rem 0;
   margin: 0.5rem 0;
 }
 
@@ -123,7 +128,7 @@ textarea:focus {
   margin: 1rem 0;
 }
 
-#actions{
+#actions {
   min-width: 200px;
   display: flex;
   justify-content: space-around;

@@ -10,7 +10,7 @@ import TheResource from './components/learning-resource/TheResource.vue';
 export default {
   components: {
     TheHeader,
-    TheResource
+    TheResource,
   },
 };
 </script>
@@ -27,6 +27,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #6200EE;
+  background-color: #6200ee;
 }
+
 </style>

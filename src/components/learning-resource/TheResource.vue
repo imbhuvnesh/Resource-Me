@@ -1,15 +1,18 @@
 <template>
-  <base-card>
-    <base-btn @click="changeTabs('stored-resources')" :mode="storedResButton"
-      >Stored Resources</base-btn
-    >
-    <base-btn @click="changeTabs('add-resource')" :mode="addResButton"
-      >Add Resource</base-btn
-    >
-  </base-card>
-  <keep-alive>
-    <component :is="selectedTab"></component>
-  </keep-alive>
+  <div id="main">
+    <base-card id="tabs">
+      <base-btn @click="changeTabs('stored-resources')" :mode="storedResButton"
+        >Stored Resources</base-btn
+      >
+      <base-btn @click="changeTabs('add-resource')" :mode="addResButton"
+        >Add Resource</base-btn
+      >
+    </base-card>
+
+    <keep-alive>
+      <component :is="selectedTab"></component>
+    </keep-alive>
+  </div>
 </template>
 
 <script>
@@ -44,7 +47,6 @@ export default {
       this.selectedTab = 'stored-resources';
     },
     removeResource(id) {
-      console.log(id);
       const idx = this.storedResources.findIndex((res) => res.id === id);
       this.storedResources.splice(idx, 1);
       this.saveData();
@@ -83,7 +85,7 @@ export default {
       resources: this.storedResources,
       addResource: this.addResource,
       deleteResource: this.removeResource,
-      editResource: this.editResource
+      editResource: this.editResource,
     };
   },
 };

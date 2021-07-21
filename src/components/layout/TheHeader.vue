@@ -22,6 +22,7 @@ header {
 
 header h1 {
   color: white;
+  font-weight: bold;
   margin: 0;
 }
 </style>
