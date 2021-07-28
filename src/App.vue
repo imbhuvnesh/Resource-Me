@@ -22,7 +22,7 @@ export default {
 }
 
 html {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Archivo', open;
 }
 
 body {

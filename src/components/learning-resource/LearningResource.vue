@@ -23,18 +23,20 @@
   </base-dialog>
 
   <li>
-    <base-card>
-      <header>
-        <h3>{{ title }}</h3>
-        <div id="actions">
-          <base-btn @click="deleteResource(id)">Delete</base-btn>
-          <base-btn @click="isEditClicked = true">Edit</base-btn>
-        </div>
-      </header>
-      <p>{{ description }}</p>
-      <nav>
-        <a :href="link" target="_blank">View Resource</a>
-      </nav>
+    <base-card class="card">
+      <div id="desc">
+        <header>
+          <h3>{{ title }}</h3>
+        </header>
+        <p>{{ description }}</p>
+        <nav>
+          <a :href="link" target="_blank">View Resource</a>
+        </nav>
+      </div>
+      <div id="actions">
+        <base-btn @click="deleteResource(id)">Delete</base-btn>
+        <base-btn @click="isEditClicked = true">Edit</base-btn>
+      </div>
     </base-card>
   </li>
 </template>
@@ -69,11 +71,10 @@ export default {
 li {
   margin: auto;
   max-width: 40rem;
-    transition:ease-out 4s;
-
+  transition: ease-out 4s;
 }
 
-header {
+.card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,8 +130,14 @@ textarea:focus {
 }
 
 #actions {
-  min-width: 200px;
+  max-width: 200px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column-reverse;
+  justify-content: space-between;
 }
+
+#actions button{
+  margin: 5px 2px;
+}
+
 </style>

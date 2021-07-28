@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div class="main">
     <base-card id="tabs">
       <base-btn @click="changeTabs('stored-resources')" :mode="storedResButton"
         >Stored Resources</base-btn
@@ -92,4 +92,9 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 600px) {
+  .main {
+    margin: 0 20px 0 20px;
+  }
+}
 </style>
